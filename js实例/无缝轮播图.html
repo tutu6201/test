@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/minireset.css/0.0.2/minireset.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/lunfantu.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="big">
+        <div class="small">
+            <li>  <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1557315348&di=b59e1f0f290afe79792ac664041f8e0d&src=http://img.mp.itc.cn/upload/20170728/d61f5f05a94b41b1b9b1881c6c5e6a49_th.jpg" alt="">  </li>
+            <li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557325438253&di=9f5ee737d3aed4a4acbfa681bc4a1757&imgtype=0&src=http%3A%2F%2Fimage.fsyule.net%2F2017-10-09%2Fdfe3f795e7c58a7e36fbbc8ea49d3a3c.jpg" alt=""></li>
+            <li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557325438251&di=e75d51c3b1845f2fe66ccba9a62f9a8e&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201602%2F24%2F20160224102741_YXmEz.thumb.700_0.jpeg" alt=""></li>
+            <li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557325438250&di=784ebc84bde3d7dd163b892073cc711b&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201505%2F02%2F20150502145033_kXQT5.jpeg" alt=""></li>
+            <li><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557325438249&di=be25bf224f8d7ae61d6af02e5e3e7907&imgtype=0&src=http%3A%2F%2Fimg3.duitang.com%2Fuploads%2Fitem%2F201503%2F27%2F20150327230033_mkECs.jpeg" alt=""></li>
+        </div>
+        <div class="but">
+            <span  onclick="prevPic()">prev</span>
+            <span onclick="nextPic()">next</span>
+        </div>
+    </div>
+
+
+    <script>
+        var small=document.querySelector('.big .small')
+     
+        function nextPic()
+        {
+             var lis=document.querySelectorAll('.big .small li')
+
+            lis[0].style.marginLeft="-400px"
+           
+            setTimeout(function()
+            {
+                // small.appendChild(lis[0])
+                small.appendChild(lis[0])
+                lis[0].style.marginLeft='0'
+                
+                 
+            }
+           ,1000)
+        }
+        function prevPic()
+        {
+            var lis=document.querySelectorAll('.big .small li ')
+            small.insertBefore(lis[lis.length-1],lis[0])  
+            // 直接使用，不需要调用
+
+            lis[lis.length-1].style.marginLeft = '-400px'
+            setTimeout(function () {
+                lis[lis.length-1].style.marginLeft = '0'
+            },10)
+            // 用于让滑动有个清晰的效果
+        }
+       
+    </script>
+</body>
+</html>

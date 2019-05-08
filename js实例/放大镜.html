@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="zoom" id="zoom">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+
+    </select>
+    <div class="box">
+        <img src="../images/a6.png" alt="">
+        <div class="mask"></div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+            background: lightblue;
+        }
+
+        #zoom {
+            width: 100px;
+            font-size: 16px;
+            line-height: 24px;
+            border-radius: 24px;
+            padding: 0 10px;
+            outline: none;
+        }
+
+        .box {
+            width: 300px;
+            height: auto;
+            margin: 100px auto;
+            position: relative;
+            cursor: none;
+        }
+
+        .box img {
+            width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .box .mask {
+            width: 150px;
+            height: 150px;
+            background: url('../images/a6.png') no-repeat;
+            position: absolute;
+            border: 3px solid white;
+            border-radius: 50%;
+            top: 0;
+            left: 0;
+            background-size: 300px;
+            /* pointer-events:none; */
+            display: none;
+        }
+
+        .box .mask::before,
+        .box .mask::after {
+            content: '';
+            width: 10px;
+            height: 1px;
+            background: white;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: calc(50% - 10px/2);
+        }
+
+        .box .mask::after {
+            transform: rotate(90deg)
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var zoom = document.getElementsByName('zoom')[0]
+            var box = document.querySelector('.box')
+            var boxSizeX = parseInt(window.getComputedStyle(box).width)
+            var boxSizeY = parseInt(window.getComputedStyle(box).height)
+            var img = document.querySelector('.box img')
+            var mask = document.querySelector('.box .mask')
+            var maskSizeX = parseInt(window.getComputedStyle(mask).width)
+
+
+            box.addEventListener('mousemove', function (e) {
+                mask.style.backgroundSize = boxSizeX * zoom.value + 'px auto'
+                mask.style.display = 'block'
+
+                var x = e.pageX - box.offsetLeft
+                var y = e.pageY - box.offsetTop
+                if (x < 0 || y < 0 || x > boxSizeX || y > boxSizeY) {
+                    mask.style.display = 'none'
+                    return
+                }
+
+                mask.style.left = x - maskSizeX / 2 + 'px'
+                mask.style.top = y - maskSizeX / 2 + 'px'
+
+                mask.style.backgroundPositionX = -(x * zoom.value - maskSizeX / 2) + 'px'
+                mask.style.backgroundPositionY = -(y * zoom.value - maskSizeX / 2) + 'px'
+            })
+        }
+    </script>
+</body>
+
+</html>

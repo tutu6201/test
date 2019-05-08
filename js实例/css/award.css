@@ -1,0 +1,18 @@
+.position {
+  position: absolute;
+}
+.big {
+  width: 650px;
+  margin: 0 auto;
+  position: relative;
+}
+.big .turntable {
+  position: absolute;
+  top: 60px;
+  left: 117px;
+}
+.big .pointer {
+  position: absolute;
+  top: 157px;
+  left: 258px;
+}

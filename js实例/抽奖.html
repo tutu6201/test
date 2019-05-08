@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/award.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="big">      
+        <img  class="bg" src="./img/turntable-bg.jpg" alt="">
+         <img class="turntable" src="./img/turntable.png" alt="">
+        <img class="pointer" src="./img/lottery-pointer.png" alt="">
+    </div>
+
+    <script>
+        var pointer=document.getElementsByClassName("pointer")[0];
+        var turntable=document.getElementsByClassName("turntable")[0];
+        var info={
+            code:undefined,
+            text:undefined
+        }
+        var canClik=true;
+       
+    //    pointer.onclick=function()
+    //    {
+    //        turntable.style.transform="rotate(180deg)"
+    //        turntable.style.transition="all 3s"
+    //    }
+        
+
+        var funcA=function()
+        { 
+            if(canClik==true)
+            {   canClik=false;
+                turntable.style.transform="rotate(0deg)"
+                turntable.style.transition="all 0s"
+                
+                setTimeout(function() {
+                    var i=Math.floor(Math.random()*100);
+
+                    if (i < 3) {
+                        info.code = 1;
+                        info.text = '免单4999元'
+                    } else if (i  < 6) {
+                        info.code = 2;
+                        info.text = '免单50元'
+                    } else if (i < 13) {
+                        info.code = 3;
+                        info.text = '免单10元'
+                    } else if (i  < 22) {
+                        info.code = 4;
+                        info.text = '免单5元'
+                    } else if (i  < 35) {
+                        info.code = 5;
+                        info.text = '免分期服务'
+                    } else if (i  < 50) {
+                        info.code = 6;
+                        info.text = '提高白条额度'
+                    } else {
+                        info.code = 7;
+                        info.text = '未中奖'
+                    } 
+            console.log(info.text)       
+             var deg=30+(info.code-1)*(360/7)+1080;
+            turntable.style.transform = 'rotate(' + deg + 'deg)'
+            turntable.style.transition="all 3s"
+          
+                }, 10);
+
+                setTimeout(function()  {
+                    alert(info.text)
+                    canClik=true;
+                }, 3000);
+           
+}
+    }
+    
+    pointer.onclick=funcA
+    
+    
+    
+    
+    
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <video src="./horse.ogg" display="none"></video>
+    <div class="stage"></div>
+    <p class="score"> 0</p>
+    <style>
+        .stage {
+            width: 500px;
+            height: 300px;
+            border: 1px solid lightcoral;
+            margin: 0 auto;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .stage i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+    </style>
+
+    <script>
+        var stage = document.querySelector('.stage')
+        var blockSize = 10;
+        var Oscore=document.querySelector('.score')
+        var score=0
+        var gameOver=false;
+        var blocksInWidth = parseInt(window.getComputedStyle(stage).width) / blockSize
+        var blocksInHeight = parseInt(window.getComputedStyle(stage).height) / blockSize
+        var video=document.querySelector('video')
+
+        // 每一个块的构造函数 
+        var Block = function (col, row) {
+            this.col = col
+            this.row = row
+        }
+        // 每一个块的画法
+        Block.prototype.draw = function (color) {
+            if (this.node) {
+                // 每次画点的时候 都先把原来旧的 dom节点 先删掉
+                stage.removeChild(this.node)
+            }
+
+            this.node = document.createElement('i')
+            this.node.style.width = blockSize + 'px'
+            this.node.style.height = blockSize + 'px'
+
+            this.node.style.background = color
+
+            this.node.style.left = (this.col - 1) * blockSize + 'px'
+            this.node.style.top = (this.row - 1) * blockSize + 'px'
+
+            stage.appendChild(this.node)
+            
+        }
+
+
+
+        // 蛇的构造函数 
+        var Snake = function () {
+            this.segments = [
+                new Block(3, 1),
+                new Block(2, 1),
+                new Block(1, 1)
+            ]
+            this.direction = 'right'
+            this.nextDirection='right'
+        }
+        Snake.prototype.draw = function () {
+            this.segments.forEach(function (element,index) {
+                // console.log(element);
+                if(index===0)
+                {
+                    element.draw('green')
+                }
+                else{
+                     element.draw('orange')
+                }
+               
+            });
+        }
+
+        Snake.prototype.move = function () {
+           this.direction=this.nextDirection
+            var head = this.segments[0]
+            
+            // this.newHead
+            // 新的蛇头 在向右走的情况向 
+            // var newHead = new Block(head.col + 1, head.row)
+
+            // 禁止反方向移动 比如原来向右走 新的方向是 向左
+            switch (this.direction) {
+                case 'right':
+                    this.newHead = new Block(head.col + 1, head.row)
+                    break;
+                case 'left':
+                   this. newHead = new Block(head.col - 1, head.row)
+                    break;
+                case 'down':
+                    this.newHead = new Block(head.col, head.row + 1)
+                    break;
+                case 'up':
+                    this.newHead = new Block(head.col, head.row - 1)
+                    break;
+            }
+            // console.log(newHead);
+
+            // 把新蛇头加入到蛇身体的数组里面
+            this.segments.unshift(this.newHead)
+
+            // 判断条件 吃到苹果 移动苹果 没吃到 只移动蛇身 不加长 删掉尾巴
+            if (this.newHead.col === apple.segment.col && this.newHead.row === apple.segment.row) {
+            console.log('xxx')
+               
+                apple.move()
+                // video.play()
+                var video
+                apple.draw()
+                  
+            } else {
+                // 删掉片段数组里里面的尾巴 每次画的时候都是根据snake这个对象的segments属性 这个数组 重新画
+                var tail = this.segments.pop()
+                // console.log(tail.node);
+                // 删掉dom里面的 尾巴
+                stage.removeChild(tail.node)
+            }
+        }
+
+        Snake.prototype.setDirection = function (newDirection) {
+
+            if (this.direction === 'right' && newDirection === 'left') {
+                return
+            }
+            if (this.direction === 'left' && newDirection === 'right') {
+                return
+            }
+            if (this.direction === 'down' && newDirection === 'up') {
+                return
+            }
+            if (this.direction === 'up' && newDirection === 'down') {
+                return
+            }
+            this.nextDirection = newDirection
+        }
+        Snake.prototype.checkCollision = function () {
+            var rightCollision = this.segments[0].col > blocksInWidth
+            var downCollision = this.segments[0].row > blocksInHeight
+            var leftCollision = this.segments[0].col < 1
+            var upCollision = this.segments[0].row < 1
+
+            var selfCollision = false
+
+// 忽略蛇头 因为蛇头就是从newHead 生成出来的
+for (var i = 1; i < this.segments.length; i++) {
+    if (this.newHead.col === this.segments[i].col && this.newHead.row === this.segments[i].row) {
+        selfCollision = true
+    }
+            if (rightCollision || downCollision || leftCollision || upCollision || selfCollision) {
+                gameOver = true
+                clearInterval(intervarID)
+            }
+}
+
+
+        }
+        var randomNum = function (params) {
+            return Math.ceil(Math.random() * params)
+        }
+
+        var Apple = function () {
+            this.segment = new Block(10, 1)
+        }
+        Apple.prototype.draw = function () {
+            this.segment.draw('red')
+            this.segment.node.style.borderRadius="50%"
+        }
+        Apple.prototype.move = function () {
+            var randomCol
+            var randomRow
+            do{
+                var needReGenerate=false
+                randomCol = randomNum(blocksInWidth)
+                randomRow = randomNum(blocksInHeight)
+
+                snake.segments.forEach(function(element){
+                    if(element.col===randomCol&&element.row===randomRow)
+                    {
+                        needReGenerate=true
+                    }
+                });                
+            }while(needReGenerate);
+           
+
+
+            // 这里 只移动原来的苹果 不新建了 方法1
+            // this.segment.col = randomCol
+            // this.segment.row = randomRow
+            // this.segment.node.style.left = (randomCol - 1) * blockSize + 'px'
+            // this.segment.node.style.top = (randomRow - 1) * blockSize + 'px'
+
+            // 这里新建一个新的苹果对象 方法2 记得删除原来旧的苹果dom
+            stage.removeChild(this.segment.node)
+            this.segment = new Block(randomCol, randomRow)
+
+            score++
+            
+            Oscore.innerText=score
+        }
+
+
+        // var block = new Block(3, 1)
+        // block.draw('orange')
+        var directions = {
+            37: 'left',
+            38: 'up',
+            39: 'right',
+            40: 'down'
+        }
+
+        // 游戏开始
+        var snake = new Snake()
+        snake.draw()
+
+        var apple = new Apple()
+        apple.draw()
+
+        window.onkeydown = function (e) {
+            console.log(directions[e.keyCode]);
+            // snake.direction = directions[e.keyCode]
+            snake.setDirection(directions[e.keyCode])
+        }
+
+        var intervarID=setInterval(function () {
+            snake.move()  
+            snake.checkCollision()
+           if(gameOver)
+           {
+               return;
+           }
+          
+             snake.draw()
+        }, 100)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var work = [
+            "javascript",
+            "monkey",
+            "amazing",
+            "banana"
+        ];
+        var randomWork = work[Math.floor(Math.random() * work.length)];
+        console.log(randomWork);
+
+        var AnswerAarry = [];
+        for (i = 0; i < randomWork.length; i++) {
+            AnswerAarry[i] = '_'
+        }
+        console.log(AnswerAarry);
+
+        function hintUser() {
+            alert(AnswerAarry.join(" ") + "单位长度" + AnswerAarry.length)
+        }
+
+        function getLetter() {
+            return prompt("输入一个字母猜一下? 认怂点取消")
+            // confirm作用和prompt，按确定是true，按取消是false
+        }
+
+        var remainderLetters = randomWork.length
+        function updateanswerArray(guess) {
+
+            
+            for (var i = 0; i < randomWork.length; i++) {
+                if (randomWork[i] === guess) {
+                    AnswerAarry[i] = guess
+                    remainderLetters--
+
+                }
+
+            }
+
+        }
+
+        while (remainderLetters > 0) {
+            hintUser();
+            var guess = getLetter();
+            if (guess === null) {
+                break;
+            } else if (guess.length != 1) {
+                alert('请输入单个字母')
+            } else if (randomWork.indexOf(guess) == -1) {
+                alert('没有这个字母')
+            } else {
+                updateanswerArray(guess)
+            }
+        }
+
+      if(remainderLetters===randomWork.length)
+      {
+          alert('你个怂货')
+      }
+      else
+      {
+          alert('恭喜你回答正确'+AnswerAarry.join(''))
+      }
+
+    </script>
+
+
+
+
+</body>
+
+</html>

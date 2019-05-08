@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+        <div class="lit">
+            <img src="../images/timg.jpg" alt="">
+            <div class="box"></div>
+        </div>
+        <div class="magnify">
+
+        </div>
+  
+    <style>
+        .lit,
+        .magnify {
+            width: 500px;
+            height: 500px;
+            float: left;
+            border: 2px solid green;
+        }
+
+        .lit {
+            position: relative;
+        }
+
+        .lit .box {
+            width: 250px;
+            height: 250px;
+            background: rgba(101, 101, 228, 0.2);
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .magnify {
+
+            overflow: hidden;
+        position: relative;
+        }
+
+        .magnify img {
+            width: 200%;
+        
+           position: absolute;
+           top: 0PX;
+           left: 0px;
+           display: block;
+           
+
+        }
+    </style>
+
+    <script>
+        var magnify = document.querySelector('.magnify ')
+      
+        var litimg = document.querySelector('.lit img')
+        magnify.appendChild(litimg.cloneNode())
+        var lit = document.querySelector('.lit')
+        var box = document.querySelector('.lit .box')
+         var magnifyImg=document.querySelector('.magnify img')
+        lit.onmousemove = function (e) {
+            console.log(e)
+            var x = (e.pageX - 8)-125;
+            var y = (e.pageY - 8)-125;
+            if (x > 250) {
+                x = 250;
+            }
+            if (y > 250) {
+                y = 250;
+            }
+
+            if (x < 0) {
+                x = 0;
+            }
+            if (y < 0) {
+                y = 0;
+
+            }
+
+
+            box.style.top = y + 'px'
+            box.style.left = x + 'px'
+
+            magnifyImg.style.top=-y*2 +'px'
+            magnifyImg.style.left=-x*2 +'px'
+        }
+
+    </script>
+</body>
+
+</html>

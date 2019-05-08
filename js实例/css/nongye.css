@@ -1,0 +1,541 @@
+.header
+{
+	padding: 25px;
+	background-image: url(../../images/banner.jpg);
+	background-position: center;
+	background-size: cover;
+	 
+	 
+	
+}
+.ward 
+{
+	margin: 0 auto;
+	width: 1140px;
+	overflow: hidden;
+}
+.top
+{
+	width: 1140px;
+	 overflow: hidden; 
+	margin: 0 auto;
+	background-color: rgba(186,85,211,0.4);
+}
+.left ul
+{
+	float: left;
+}
+.left ul li
+{
+	
+	float: left;
+	 margin-left: 25px; 
+}
+.left ul li:after
+{
+	content: '/';
+	 margin-left: 20px; 
+	color: white;
+}
+.left ul li:last-child:after
+{
+	content: none;
+}
+.left ul li:first-child a /* 疑惑,当不加a时,效果不实现，是否因为a 和li同级呢  last-child是选择第一个li*/
+{
+	color: #FFFF00;
+}
+.left li a
+{
+	text-decoration: none;
+	 color: white; 
+}
+.left li a:hover
+{
+	border-top: #FFFF00 solid 2px;
+	transition: all 2s;
+	color:#FFFF00 ;
+}
+.top .left
+{
+	line-height: 48px;
+	float: left;
+}
+.top .right form
+{
+	padding: 10px 0px 10px 10px;
+ 	position: relative; 
+	float: right;	
+	margin-right: 8px;
+	
+
+}
+.top .right input:first-child
+{
+	background: none;
+	border: white solid 1px;
+	padding:0px 30px 0px 10px;
+	line-height: 25px;
+position: relative; 
+
+
+}
+.top .right input:last-child
+{
+	position: absolute;
+	border: none;
+	 margin-top:-28px;
+	  display: block;
+	margin-right: 3px;
+	
+	right: 0px;
+	background: url(../images/search.png)  no-repeat center ;
+	
+	width: 25px;
+	height: 29px;		
+}
+.middle
+{
+	margin-top: 200px;
+}
+.middle span
+{
+	color: white;
+	display: block;
+	margin: 0 auto;
+	width: 230px;
+	font-size:45px;
+	
+	
+}
+.middle span:after,
+.middle span:before
+{
+	content: '';
+	background: white;
+	width: 230px;
+	height: 6px;
+	margin: 0 auto;
+	display: block;		
+}
+.big
+{
+	padding: 40px 10px;
+	margin:10px;
+	background:	#191970;
+	height: auto;
+	line-height: 30px;	
+	color: white;
+} 
+.big h1
+{
+	font-size: 20px;
+}
+.big img
+{
+	border: white solid 3px;
+	border-radius: 50%;
+	
+}
+.big img:hover
+{
+	transform: rotateY(360deg);
+	transition: all 1s;
+}
+.card
+{
+	float: left;
+	width: 25%;
+	background: none;
+	text-align: center;
+
+}
+.bottom
+{
+	
+	position: relative;
+	top: 150px;
+	width:1140px;
+	margin: 0 auto;
+}
+.bigcard
+{
+	
+}
+.xia
+{
+	
+	background: #eee;
+}
+.aboutus
+{
+	padding: 200px 0px 40px 0px;
+}
+.aboutus h2
+{
+	color: #000000;
+}
+h2
+{
+	color: 	#FFFFF0;
+	font-size: 50px;
+}
+.about
+{
+	
+	width: 100%;
+	height: auto;
+	padding-bottom: 500px;
+}
+.u
+{
+	width: 40%;
+	float: left;
+	
+}
+.u img
+{
+	width: 100%;
+}
+.s
+{
+	width: 60%;
+	float: left;	
+}
+.s p
+{
+	line-height: 30px;
+	padding: 10px 0px 20px 40px;
+	font-size: 20px;
+}
+.xia p
+{
+	color: #888888;
+	
+}
+.sercices
+{
+	background: #37353b;
+}
+.our
+{
+
+}
+.ser
+{
+	float: left;
+		width: 33.3%;
+}
+.our h2
+{
+	padding: 60px 0px 30px 0px;
+}
+.ser h3
+{
+	color: white;
+	font-size: 30px;
+}
+.ser
+{
+	text-align: center;
+	padding: 10px 50px 100px 50px;
+}
+ser.p
+{
+	font-size: 10px;
+}
+.ser img
+{
+	background: #16A667;
+	border: green solid 1px;
+	border-radius: 20%;
+	padding: 10px;
+}
+.ser img:hover
+{
+	background:orange;
+}
+.work
+{
+	width: 25%;
+	 float: left; 
+	  line-height: 0px; 	
+				   position: relative;
+}
+.work img
+{
+width: 100%;
+}
+h4
+{
+	font-size: 50px;
+	padding: 55px 0px 45px 0px;	
+}
+.last .work .ks
+{
+	width: 100%;
+	height: 100%;
+	background: url(../../images/magnify.png) center no-repeat;
+	position: absolute;
+	top: 0;	
+	box-shadow:0px 0px 20px 10px rgba(255,255,255,0.75) ;
+	transform: scale(0);
+}
+.last .work .box:hover .ks
+{
+	transform: scale(1);
+	transition: all 1s;
+}
+.last
+{
+	width: 100%;
+	overflow: hidden;
+	padding-bottom:100px ;
+}
+.news .ws
+{
+	float: left;
+	width: 33.3%;
+	line-height: 50px;
+}
+.ws h5
+{
+	font-size: 20px;	color: #888888;
+}
+a
+{
+	text-decoration: none;
+	color: #000000;
+}
+.ws a:hover
+{
+	color: #16A667;
+	border-bottom: #16A667;
+}
+.ws h1
+{
+	font-size: 28px;
+}
+.ws p{color: #888888;
+line-height: 23px;	
+}
+
+.ws .read 
+{
+	width: 140px;
+	background:#f2af00;
+	height: 45px;
+	line-height: 40px;	
+}
+.read
+{
+	text-align: center;	
+	color: white;
+	position: relative;	
+}
+.read p
+{
+	z-index: 1;
+	position: relative;
+	/* color: white; */
+	padding: 10px;
+	font-size: 20px;
+	color: white;
+}
+.read a
+{
+	color: white;
+}
+.read .scale
+{
+	width: 140px;
+	height: 45px;
+	background: #16A667;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	transform:scaleY(1);
+	color: white;
+	
+}
+.read:hover .scale
+{
+	transform: scaleY(0);
+	transition: all 1s;
+
+}
+ .news .dolor
+{
+	padding-bottom:100px ;
+	overflow: hidden; 
+	width: 100%;
+}
+.bi
+{
+	padding: 30px 0px 0px 0px;
+}
+.ws img
+{
+	width: 100%;
+}
+.ws
+{
+	padding: 15px;
+}
+.upcome
+{
+	background: #3f454d;
+	
+}
+.ts
+{
+	float: left;
+	width: 33.3%;
+}
+ h7
+{
+font-size: 45px;
+padding: 45px 0px 35px 0px;	
+color: white;	
+	font-weight: 100px;
+}
+.come
+{
+	padding-bottom: 35px;
+}
+.ig
+{background: white;}
+.sa 
+{
+	float: left;
+	line-height: 30px;
+	padding: 1px 0px 0px 0px;
+}
+.sa a
+{
+	font-size: 28px;
+	color: white
+}
+.sa p
+{
+	padding: 5px;
+}
+
+.se
+{
+	float: left;
+}
+
+.pcc a,
+.bcde a
+{
+	color: #888888;
+}
+.pcc ul
+{
+	list-style-image: url(../../images/list-arrow.png);
+}.pcc 
+{
+	line-height: 50px;
+	padding: 33px 0px 0px 0px;
+}
+.bcde
+{
+	padding: 30px 0px 30px 5px;
+}
+.event
+{
+	padding-bottom: 35px;
+}.has
+{
+width: 50%;
+	margin: 0 auto; 
+	overflow: hidden;
+}
+.has li
+{
+	float: left;
+	padding: 25px 20px;
+	font-size: 21px;
+}
+.products
+{
+	overflow: hidden;
+}
+.copy
+{
+	width: 60%;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+.copy p
+{
+	font-size: 18px;
+	color: #000000;
+}
+.copy a
+{
+	color: #16A667;
+	font-size: 20px;
+}
+.copy a:hover
+{
+	color: #000000;
+	border-bottom: #000000 solid 2px;
+}
+.sa a:hover,
+.pcc a:hover,
+.bcde a:hover
+{
+	color:darkorange;
+}
+.lang
+{
+	text-align: center;
+	padding-top: 30px;
+}
+.lang .xin
+{
+	width: 55px;
+	height:55px ;
+	background-image: url(../../images/img-sprite1.png);	
+	display: inline-block;	
+}
+.xin:nth-child(2)
+{
+	background-position: -55px  0px;
+}
+.xin:nth-child(3)
+{
+	background-position: -110px 0px;
+}
+.xin:nth-child(4)
+{
+	background-position: -165px 0px;
+}
+.nthe
+{
+	float: left;
+	text-align: center;
+	padding-top: 30px;
+}
+.then
+{
+width: 40px;
+	height:55px ;
+	background-image: url(../../images/img-sprite1.png);	
+	padding: 40px 0px;
+	margin-top: 30px;
+}
+.then:nth-child(1)
+{
+	background-position: -220px 0;
+}
+.then:nth-child(2)
+{
+	background-position: -260px -3px;
+}
+.then:nth-child(3)
+{
+	background-position: -300px -8px;
+}

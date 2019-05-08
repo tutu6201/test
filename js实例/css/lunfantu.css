@@ -1,0 +1,60 @@
+.big {
+  position: relative;
+  width: 400px;
+  margin: 0px auto;
+  overflow: hidden;
+}
+.big .small {
+  width: 2000px;
+  overflow: hidden;
+  text-align: center;
+}
+.big .small li {
+  float: left;
+  list-style: none;
+  font-size: 25px;
+  color: white;
+  width: 400px;
+  height: 200px;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.big .small li img {
+  width: 100%;
+  height: 100%;
+}
+.big .small li.item1 {
+  background: oldlace;
+}
+.big .small li.item2 {
+  background: olive;
+}
+.big .small li.item3 {
+  background: orange;
+}
+.big .small li.item4 {
+  background: orchid;
+}
+.big .small li.item5 {
+  background: brown;
+}
+.big .but span {
+  background: blue;
+  position: absolute;
+  padding: 8px 0px;
+  top: 37%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+.big .but span:last-child {
+  right: -35px;
+}
+.big .but span:first-child {
+  left: -35px;
+}
+.big:hover .but span:last-child {
+  right: 0px;
+}
+.big:hover .but span:first-child {
+  left: 0px;
+}

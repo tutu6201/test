@@ -1,0 +1,437 @@
+body {
+  color: #707d8f;
+}
+.x-header {
+  background: #1f2532;
+}
+.x-header .container .navbar ul.nav li:first-child a {
+  color: white;
+}
+.x-header .container .navbar ul.nav li a {
+  color: #707d8f;
+}
+.x-header .container .navbar ul.nav li a:hover {
+  background: none;
+  color: red;
+}
+.x-header .container .navbar .dropdown .dropdown-menu {
+  background: #000;
+}
+.x-header .container .row {
+  margin: 80px 0px;
+}
+.x-header .container .row img {
+  max-width: 100%;
+}
+.x-header .container .row .x-vidieo {
+  position: relative;
+}
+.x-header .container .row .x-vidieo button {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  border: none;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.x-header .container .row .x-vidieo button span {
+  color: #f0326b;
+  font-size: 36px;
+}
+.x-header .container .row .x-vidieo:hover button {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.x-header .container .row .x-description {
+  padding: 0px 00px 0px 40px;
+}
+.x-header .container .row .x-description h3 {
+  font-size: 45px;
+  color: white;
+  margin-bottom: 22px;
+}
+.x-header .container .row .x-description p {
+  font-size: 15px;
+}
+.x-header .container .row .x-description a.btn {
+  color: white;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 0;
+  margin-top: 40px;
+  background: -webkit-linear-gradient(350deg, #f9643d, #fe2a77);
+  background: linear-gradient(100deg, #f9643d, #fe2a77);
+}
+.x-second {
+  background: GhostWhite;
+}
+.x-second .container .row {
+  padding: 100px 0px 70px 0px;
+}
+.x-second .container .row h3 {
+  color: black;
+  position: relative;
+  margin: 0;
+}
+.x-second .container .row h3::before {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #fe2a77;
+  position: absolute;
+  top: 15px;
+  left: -60px;
+}
+.x-three {
+  padding-bottom: 100px;
+}
+.x-three .container .row div {
+  padding: 0px 50px;
+  text-align: center;
+}
+.x-three .container .row div span {
+  color: lightcoral;
+  font-size: 30px;
+  padding: 60px 0px 20px 0px;
+}
+.x-three .container .row div h4 {
+  color: black;
+}
+.x-four {
+  padding-bottom: 50px;
+}
+.x-four .container img {
+  max-width: 100%;
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
+}
+.x-four .container .row div {
+  line-height: 1.7em;
+}
+.x-four .container .row div h3 {
+  color: black;
+  font-weight: bold;
+  padding: 70px 30px 0px 0px;
+}
+.x-five {
+  background: GhostWhite;
+  padding: 70px 0px;
+}
+.x-five .container .x-description {
+  text-align: center;
+}
+.x-five .container .x-description h1 {
+  font-size: 5px;
+  letter-spacing: 3px;
+  color: black;
+  font-weight: bold;
+}
+.x-five .container .x-description h3 {
+  color: black;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: 27px;
+  line-height: 45px;
+}
+.x-five .container .x-description h3::after {
+  content: '';
+  border: none;
+  border-radius: 3px;
+  display: block;
+  width: 65px;
+  height: 4px;
+  background: -webkit-linear-gradient(350deg, #f9643d, #fe2a77);
+  background: linear-gradient(100deg, #f9643d, #fe2a77);
+  margin: 0 auto;
+}
+.x-five .container .x-description p {
+  margin-bottom: 40px;
+}
+.x-five .container .row {
+  text-align: center;
+}
+.x-five .container .row .x-box {
+  border: 1px solid #eee;
+  background: #fff;
+  position: relative;
+  padding: 80px 20px;
+}
+.x-five .container .row .x-box span {
+  font-size: 80px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  color: #f3f1f1;
+  font-weight: 700;
+}
+.x-five .container .row .x-box i {
+  width: 50px;
+  height: 50px;
+  background: -webkit-linear-gradient(350deg, #f9643d, #fe2a77);
+  background: linear-gradient(100deg, #f9643d, #fe2a77);
+  border: none;
+  border-radius: 45%;
+  line-height: 53px;
+  box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+  color: white;
+}
+.x-five .container .row .x-box h4 {
+  color: black;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+.x-six {
+  margin-bottom: 80px;
+}
+.x-six .container .x-description h1 {
+  font-size: 5px;
+  letter-spacing: 3px;
+  color: black;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.x-six .container .x-description h3 {
+  color: black;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 45px;
+}
+.x-six .container .x-description h3::after {
+  content: '';
+  border: none;
+  border-radius: 3px;
+  display: block;
+  width: 65px;
+  height: 4px;
+  background: -webkit-linear-gradient(350deg, #f9643d, #fe2a77);
+  background: linear-gradient(100deg, #f9643d, #fe2a77);
+  margin: 0 auto;
+}
+.x-six .container .x-description p {
+  margin-bottom: 40px;
+}
+.x-six .x-press {
+  padding-bottom: 20px;
+}
+.x-six .x-press .z-description div {
+  padding: 5px 5px;
+}
+.x-six .x-press .z-description div:hover {
+  border-bottom: 2px solid #f0326b;
+  color: #000;
+}
+.x-six .x-press .z-description div a {
+  text-decoration: none;
+  color: #777;
+}
+.x-six .x-press .z-description div a:hover {
+  color: #000;
+}
+.x-six .x-press .x-img {
+  overflow: hidden;
+}
+.x-six .x-press .x-img span {
+  display: block;
+  padding: 0px 0px;
+}
+.x-six .x-press .x-img span img {
+  max-width: 100%;
+  display: block;
+}
+.x-seven {
+  background: GhostWhite;
+  padding-bottom: 80px;
+}
+.x-seven .container .x-description h1 {
+  font-size: 5px;
+  letter-spacing: 3px;
+  color: black;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.x-seven .container .x-description h3 {
+  color: black;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 45px;
+}
+.x-seven .container .x-description p {
+  margin-bottom: 40px;
+}
+.x-seven .container .x-description .row {
+  margin-top: 50px;
+}
+.x-seven .container .x-description .row ul {
+  overflow: hidden;
+  padding: 0px 20px;
+}
+.x-seven .container .x-description .row ul li {
+  background: white;
+  list-style: none;
+  padding: 0px;
+}
+.x-seven .container .x-description .row ul li div {
+  overflow: hidden;
+  position: relative;
+}
+.x-seven .container .x-description .row ul li div img {
+  max-width: 100%;
+  opacity: 5;
+}
+.x-seven .container .x-description .row ul li:hover img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.x-seven .container .x-description .row ul li h4 {
+  color: black;
+}
+.x-seven .container .x-description .row ul li h6 {
+  color: black;
+}
+.x-seven .container .x-description .row ul li span i {
+  color: lightcoral;
+  padding: 0px 8px;
+}
+.x-eight {
+  padding-bottom: 65px;
+}
+.x-eight .container .x-description h1 {
+  font-size: 5px;
+  letter-spacing: 3px;
+  color: black;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.x-eight .container .x-description h3 {
+  color: black;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 45px;
+}
+.x-eight .container .x-description p {
+  margin-bottom: 40px;
+}
+.x-eight .container .x-d {
+  padding: 0px 20px;
+}
+.x-eight .container .x-d ul li {
+  padding: 10px 0px;
+  background: GhostWhite;
+  list-style: none;
+}
+.x-eight .container .x-d ul li .btn {
+  padding: 8px 35px;
+  color: white;
+  background: -webkit-linear-gradient(350deg, #f9643d, #fe2a77);
+  background: linear-gradient(100deg, #f9643d, #fe2a77);
+}
+.x-eight .container .x-d ul li .x-purple {
+  padding: 20px 0px 4px 0px;
+  background-image: url(http://demo.cssmoban.com/cssthemes5/twts_219_navigator/images/pricing-bg.jpg);
+  background-size: cover;
+  color: white;
+}
+.x-eight .container .x-d ul li .x-purple h1 {
+  font-weight: bolder;
+  font-size: 50px;
+}
+.x-ten {
+  padding-bottom: 65px;
+  background: ghostwhite;
+}
+.x-ten .container .x-description h1 {
+  font-size: 5px;
+  letter-spacing: 3px;
+  color: black;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.x-ten .container .x-description h3 {
+  color: black;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 45px;
+}
+.x-ten .container .x-description p {
+  margin-bottom: 40px;
+}
+.x-ten .x-d ul li {
+  list-style: none;
+}
+.x-ten .x-d ul li .x-purple {
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.34);
+}
+.x-ten .x-d ul li .x-purple img {
+  max-width: 100%;
+}
+.x-ten .x-d ul li h4 {
+  padding: 15px 0px 8px 0px;
+}
+.x-ten .x-d ul li h4 a {
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+.x-ten .x-d ul li span {
+  padding: 3px 0px 10px 0px;
+  display: block;
+}
+.x-ten .x-d ul li span a {
+  color: #000000;
+  text-decoration: none;
+}
+.x-ten .x-d ul li .btn {
+  padding: 8px 35px;
+  color: white;
+  background: -webkit-linear-gradient(350deg, #f9643d, #fe2a77);
+  background: linear-gradient(100deg, #f9643d, #fe2a77);
+}
+.x-eleven {
+  padding-bottom: 65px;
+  background: ghostwhite;
+}
+.x-eleven .container .x-description h1 {
+  font-size: 5px;
+  letter-spacing: 3px;
+  color: black;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.x-eleven .container .x-description h3 {
+  color: black;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 45px;
+}
+.x-eleven .container .x-description p {
+  margin-bottom: 40px;
+}
+.x-eleven .z-medius .input-group input {
+  outline: 0;
+  border: 0;
+  outline-color: none;
+  margin: 10px 0;
+}
+.x-eleven .z-medius .input-group input:focus {
+  border-color: red;
+  outline-color: none;
+  outline: 0;
+  box-shadow: 0 0 5px red;
+}
+.x-eleven .z-medius .input-group input:hover {
+  border-color: red;
+  outline-color: none;
+  outline: 0;
+  box-shadow: 0 0 5px red;
+}

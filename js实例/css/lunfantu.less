@@ -1,0 +1,94 @@
+.big
+{   position: relative;
+    width: 400px;
+    margin: 0px auto;
+    overflow: hidden;
+   
+    .small{
+        width: 2000px;
+     
+        overflow: hidden;
+        text-align: center;
+       
+        li
+        {
+            float: left;
+            list-style: none;
+            font-size: 25px;
+            color: white;
+            width: 400px;
+            height: 200px;
+         
+            transition:all 1s;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+            &.item1
+            {
+                background: oldlace;
+
+            }
+            &.item2
+            {
+                background: olive;
+
+            }
+            &.item3
+            {
+                background: orange;
+
+            }
+            &.item4
+            {
+                background: orchid;
+
+            }
+            &.item5
+            {
+                background: brown;
+
+            }
+        
+        }
+    }
+    .but
+    {   
+        span
+        {
+            background: blue;
+            position: absolute;
+            padding: 8px 0px;
+            top: 37%;
+             transition: all 1s;
+            &:last-child
+            {
+                right: -35px;
+               
+               
+            }
+            &:first-child
+            {
+                left: -35px;
+            }
+           
+        }
+    }
+    &:hover
+    {
+        .but
+        {
+            span
+            {
+                &:last-child
+                {
+                    right: 0px;
+                }
+                &:first-child
+                {
+                    left:0px;
+                }
+            }
+        }
+    }
+}

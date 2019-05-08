@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滑动美白</title>
+</head>
+<body>
+    <div class="stage">
+        <div class="slider"></div>
+        <input type="range" name="slideway" value="15">
+
+
+    </div>
+
+    <style>
+    .stage
+    {
+        width: 300px;
+        height: 300px;
+        background: url("./old.jpg") no-repeat;
+        background-size: auto 100% ;
+        position: relative;
+
+    }
+    .slider{
+        width: 20px;
+        height: 100%;
+        background: url("./new.jpg") no-repeat;
+        background-size:auto 100%;
+        position: absolute;
+        top: 0;
+        left: 0;     
+    }
+    .stage .slider::after
+    {
+content: "";
+width: 20px;
+height: 20px;
+background:rgba(36,192,36,0.3);
+display: block;
+border-radius: 55%;
+position: absolute;
+top: 50%;
+margin-top: -10px;
+right: -10px;
+    }
+    .stage input{
+        position:absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        
+    }
+    </style>
+
+    <script>
+    var slideway=document.getElementsByName("slideway")[0]
+    var silder=document.querySelector(".stage .slider")
+
+    slideway.oninput=function()
+    {
+        console.log(this.value);
+        silder.style.width=this.value+"%"
+    }
+    
+    </script>
+</body>
+</html>
